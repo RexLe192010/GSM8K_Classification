@@ -78,8 +78,6 @@ class LLMClient:
 
             result = self._app.acquire_token_by_device_flow(flow)
 
-        print(result)
-
 
         return result["access_token"]
 
