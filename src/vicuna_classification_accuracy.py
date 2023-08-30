@@ -218,7 +218,7 @@ def cot_majority_vote_n(filepath, threshold, n=15):
 	cal_accuracy = cal_correct_cnt / all_cnt
 	eq_accuracy = eq_correct_cnt / all_cnt
 	accuracy = correct_cnt / all_cnt
-	print("Cot@n-Majority-Vote:")
+	print("Cot@{}-Majority-Vote:".format(n))
 	print("AUC: {}".format(auc))
 	print("There're {} different results from calculator and equation.".format(diff_cnt))
 	print("Accuracy of pure arithmetic: {:.4f}%.".format(cal_accuracy * 100))
@@ -375,8 +375,10 @@ def cot_majority_vote_25(filepath, threshold):
 
 
 
-
 if __name__ == '__main__':
 	# cot_1(filepath_test)
-	cot_majority_vote_n(filepath_test, 1.7, 15)
-	cot_majority_vote_25(filepath_test, 1.7)
+	cot_majority_vote_n(filepath_test, 0.96, 5)
+	cot_majority_vote_n(filepath_test, 1.75, 10)
+	cot_majority_vote_n(filepath_test, 2.37, 15)
+	cot_majority_vote_n(filepath_test, 1.21, 20)
+	cot_majority_vote_25(filepath_test, 1.14)
